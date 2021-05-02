@@ -32,4 +32,4 @@ Used two inbulit methods from the arduino IDE. touchRead() and touchAttachInterr
 
 # Hardware Layout
 
-![Image 1](/TouchyThing/images/img_1.jpg)
+![Image 1](/Images/img_1.jpg)
