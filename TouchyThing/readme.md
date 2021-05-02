@@ -29,6 +29,12 @@ Used two inbulit methods from the arduino IDE. touchRead() and touchAttachInterr
         delay(2000);  
     }
 ```
+---
+# Working Example
+![Video_1 ](TouchyThing/Images/video_1.mp4)
+---
+
+
 
 # Hardware Layout
 
