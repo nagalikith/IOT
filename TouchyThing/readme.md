@@ -32,4 +32,4 @@ Used two inbulit methods from the arduino IDE. touchRead() and touchAttachInterr
 
 # Hardware Layout
 
-![Image 1](/images/img_1.png)
+![Image 1](/images/img_1.jpg)
