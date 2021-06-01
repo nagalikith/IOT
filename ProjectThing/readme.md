@@ -16,6 +16,6 @@ Overview of how the System works
 IFTTT stands for “if this, then that.” https://ifttt.com/ was used to create two Applets which acted as triggers whenever a webhook was called or tweet was posted at a certain location.
 
 1. Webhook to Twitter. This Applet was used to POST to twitter to notify when a election was started
-![IFTT_POST](/ProjectThing/Images/IFTT_POST.jpg)
+![IFTT_POST](/ProjectThing/Images/IFTT_POST.JPG)
 2. Twitter to Adafruit IO. Whenever there was a tweet which used geo loaction and was within the selected area. This event was triggered. This stored the twitter info in Adafruit IO.
-![IFTT_Get_vote](/ProjectThing/Images/IFTT_Get_vote.jpg)
+![IFTT_Get_vote](/ProjectThing/Images/IFTT_Get_vote.JPG)
