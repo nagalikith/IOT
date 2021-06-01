@@ -5,7 +5,7 @@ Twitter was used to store and access votes. IFTTT platform was used to make even
 ESP-32 runs a local web server which can be connect to and the results of the election can be accessed from there.
 
 Overview of how the System works
-![Image 1](/TouchyThing/Images/Activity_diagram.png)
+![Image 1](/ProjectThing/Images/Activity_diagram.png)
 
 #Functions
 1. Connect to ESP-32 local server to send a tweet to post to twitter and start election
