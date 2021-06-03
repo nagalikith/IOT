@@ -73,7 +73,7 @@ Here is an example of the serial monitor on real time data.
       Serial.println("Accuracy: " + String(loc.accuracy));
 ```
 
-## Retrieving data JSON Object when GET Request is called.
+## Retrieving from data JSON Object when GET Request is called.
 
 ```C++
      for (int i = 0; i < myObjects.length(); i++){
