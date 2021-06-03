@@ -12,6 +12,14 @@ Overview of how the System works
 2. Get ESP-32 device location
 3. Get a List of votes or tweets in that locality
 
+# Libraries used
+This is a brief list of the Libraries that have been used for this project
+1. WiFi.h
+2. WiFiClientSecure.h
+3. WifiLocation.h
+4. Arduino_JSON.h
+5. HTTPClient.h
+
 # IFTTT 
 IFTTT stands for “if this, then that.” https://ifttt.com/ was used to create two Applets which acted as triggers whenever a webhook was called or tweet was posted at a certain location.
 
@@ -29,17 +37,58 @@ The feed is public and be accessed by anyone with the url
 https://io.adafruit.com/likiths/feeds/esp-32
 
 # ESP-32 Local Server
-The local hosted server run a webpage which provided the following Functions
+The local hosted server run a webpage which provided the following Functions. The ESP-32 Device acts a IoT Gateway
 1. To connect to new network
 2. To check the status of the network
 3. Start an election by sending a tweet out
 4. See the results of the election
+
+# Election
+The system also uses Google API to get the boards exact location which is displayed on the web browser
+![Election](/ProjectThing/Images/Election.JPG)
 
 # Results
 ![Result_1](/ProjectThing/Images/Result_1.JPG)
 
 Here is an example of the serial monitor on real time data.
 ![monitor](/ProjectThing/Images/monitor.JPG)
+
+
+# Code Review
+
+## Handles added to the webserver
+```C++
+   webServer.on("/election", getElections);
+   webServer.on("/result", getResults);
+```
+
+## Google API to get the exact location of the IoT device (ESP-32 Device)
+```C++
+      location_t loc = location.getGeoFromWiFi();
+      Serial.println("Location request data");
+      Serial.println(location.getSurroundingWiFiJson());
+      //Getting IoT Device Location
+      Serial.println("Latitude: " + String(loc.lat, 7));
+      Serial.println("Longitude: " + String(loc.lon, 7));
+      Serial.println("Accuracy: " + String(loc.accuracy));
+```
+
+## Retrieving data JSON Object when GET Request is called.
+
+```C++
+     for (int i = 0; i < myObjects.length(); i++){
+         //Getting  data from each of the array of JSON objects
+         JSONVar myObject  = myObjects[i];
+         //Search by Value
+         Serial.println("Keys OBJECT: "+ JSON.stringify(myObject["value"]));
+         //Insert Value as a Bullet Point in result page
+         s += "\n<li>Vote: ";
+         s += JSON.stringify(myObject["value"]);
+         s += "</li>\n";  
+          //sensorReadingsArr[i] = double(value);
+      }
+```
+
 
 # Limitations
 1. The tweet are not filtered so anyone who tweets with the geo location within the IFTTT area will be stored and displayed as a vote.
