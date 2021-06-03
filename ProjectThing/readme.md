@@ -19,3 +19,29 @@ IFTTT stands for “if this, then that.” https://ifttt.com/ was used to create
 ![IFTT_POST](/ProjectThing/Images/IFTT_POST.JPG)
 2. Twitter to Adafruit IO. Whenever there was a tweet which used geo loaction and was within the selected area. This event was triggered. This stored the twitter info in Adafruit IO.
 ![IFTT_Get_vote](/ProjectThing/Images/IFTT_Get_vote.JPG)
+
+# Adafruit IO
+Adafruit IO was used to monitor and store any tweets which was triggered on the IoT platform. As the device may not always be connected to the internet there is a sure way to ensure that all data is stored and later can be recieved by the ESP-32 Module.
+
+On Adafruit IO a feed was created which allowed the date to be stored in real time.
+![Adafruit](/ProjectThing/Images/Adafruit.JPG)
+The feed is public and be accessed by anyone with the url
+https://io.adafruit.com/likiths/feeds/esp-32
+
+# ESP-32 Local Server
+The local hosted server run a webpage which provided the following Functions
+1. To connect to new network
+2. To check the status of the network
+3. Start an election by sending a tweet out
+4. See the results of the election
+
+# Results
+![Result_1](/ProjectThing/Images/Result_1.JPG)
+
+Here is an example of the serial monitor on real time data.
+![monitor](/ProjectThing/Images/monitor.JPG)
+
+# Limitations
+1. The tweet are not filtered so anyone who tweets with the geo location within the IFTTT area will be stored and displayed as a vote.
+2. When starting a new election the past votes are not deleted
+3. The use of MQTT would have made the system more efficient and have lesser overhead. 
