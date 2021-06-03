@@ -4,7 +4,7 @@ The challenge with this project is to provide mechanisms to prevent vote stuffin
 Twitter was used to store and access votes. IFTTT platform was used to make events to post to twitter and get any votes from a perticular place.
 ESP-32 runs a local web server which can be connect to and the results of the election can be accessed from there.
 
-Overview of how the System works
+## Overview of how the System works
 ![Activity_diagram](/ProjectThing/Images/Activity_diagram.png)
 
 # Functions
@@ -43,11 +43,11 @@ The local hosted server run a webpage which provided the following Functions. Th
 3. Start an election by sending a tweet out
 4. See the results of the election
 
-# Election
+## Election
 The system also uses Google API to get the boards exact location which is displayed on the web browser
 ![Election](/ProjectThing/Images/Election.JPG)
 
-# Results
+## Results
 ![Result_1](/ProjectThing/Images/Result_1.JPG)
 
 Here is an example of the serial monitor on real time data.
